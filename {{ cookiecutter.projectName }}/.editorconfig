@@ -1,0 +1,25 @@
+# EditorConfig documentation: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+{%- if cookiecutter.os == "windows" -%}
+# Windows-style newlines with a newline ending every file
+[*]
+end_of_line = crlf
+insert_final_newline = true
+{%- else -%}
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+{% endif %}
+
+# 4 space indentation
+[*.{java,json,xml}]
+indent_style = {{ cookiecutter.indent_style }}
+indent_size = {{ cookiecutter.indent_size }}
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = true

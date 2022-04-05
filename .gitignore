@@ -1,0 +1,5 @@
+
+.vscode/
+
+# ignore build tests inside the cookiecutter
+target/

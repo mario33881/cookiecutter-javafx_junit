@@ -1,0 +1,10 @@
+{
+    "projectName": "MyAmazingApp",
+    "artifactId": "{{ cookiecutter.projectName }}",
+    "groupId": "org.example",
+    "java_package_dir": "{{ cookiecutter.groupId.replace('.', '/') }}",
+    "version": "0.0.1",
+    "os": ["linux/other", "windows"],
+    "indent_style": ["space", "tab"],
+    "indent_size": "4"
+}

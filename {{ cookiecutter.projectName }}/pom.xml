@@ -1,0 +1,98 @@
+<!--
+    Maven configuration file for JavaFX and JUnit 5.
+
+    Defines (using XML format) dependencies and plugins used to run and test
+    applications that use the JavaFX library.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!-- Maven config version -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Group identifier, "inverse" URL format (the same as the java package name convention) -->
+    <groupId>{{ cookiecutter.groupId }}</groupId>
+
+    <!-- Project identifier -->
+    <artifactId>{{ cookiecutter.artifactId }}</artifactId>
+
+    <!-- Project version -->
+    <version>{{ cookiecutter.version }}</version>
+
+    <!-- Project properties: defines file encoding and variables used in this file -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+
+        <project.mainClass.path>{{ cookiecutter.groupId }}.{{ cookiecutter.artifactId }}</project.mainClass.path>
+        <maven.maven-compiler-plugin.version>3.8.0</maven.maven-compiler-plugin.version>
+        <junit.jupiter.version>5.8.1</junit.jupiter.version>
+        <javafx.javafx-controls.version>17.0.1</javafx.javafx-controls.version>
+        <javafx.javafx-maven-plugin.version>0.0.3</javafx.javafx-maven-plugin.version>
+        <maven-surefire.maven-surefire-plugin.version>3.0.0-M6</maven-surefire.maven-surefire-plugin.version>
+
+    </properties>
+
+    <!--
+        Project dependencies
+        > All the variables used between ${} are defined in <properties></properties>
+    -->
+    <dependencies>
+
+        <!-- JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.javafx-controls.version}</version>
+        </dependency>
+
+        <!-- junit 5, unit tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!--
+        List of plugins used to build the project
+        > All the variables used between ${} are defined in <properties></properties>
+    -->
+    <build>
+        <plugins>
+
+            <!-- Maven compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>${maven.compiler.source}</release>
+                </configuration>
+            </plugin>
+
+            <!-- JavaFX plugin for Maven -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.javafx-maven-plugin.version}</version>
+                <configuration>
+                    <!-- App's main class -->
+                    <mainClass>${project.mainClass.path}</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Maven surefire: executes tests using junit 5 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire.maven-surefire-plugin.version}</version>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
