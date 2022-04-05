@@ -53,7 +53,10 @@ that uses JavaFX as the GUI library and JUnit as the unit testing library.
 
 2. Read the ```README.md``` file inside the project template to get started.
 
-Change the files as you like and use maven to run both the code and the tests.
+Change the files as you like with your favourite IDE or text editor.
+
+You can run the application and tests by using an IDE or by running Maven from the command line.
+> More instructions inside the project's ```README.md``` file
 
 ## Changelog
 

@@ -23,12 +23,34 @@ This repository contains the following folders:
 
 ## How to run the application
 
+### From an IDE
+
+1. Find an "Open project" (or "Open existing project") button and select this folder.
+
+2. Click on the run button used to run a normal application
+> You might need to open the main source file that you want to execute so that the IDE knows which file you want to run
+
+> Tested with Intellij IDEA
+
+### From the command line
+
 To run the application, execute the following command in the command line:
 ```
 mvn javafx:run
 ```
 
 ## How to run the tests
+
+### From an IDE
+
+1. Find an "Open project" (or "Open existing project") button and select this folder.
+
+2. Click on the run button used to run the unit tests
+> You might need to open the test source file that you want to execute so that the IDE knows which file you want to run
+
+> Tested with Intellij IDEA
+
+### From the command line
 
 To run the application's tests, execute the following command:
 ```
