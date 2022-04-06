@@ -14,7 +14,6 @@ from cookiecutter.main import cookiecutter
 from cookiecutter.exceptions import FailedHookException
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-config_path = os.path.join(current_dir, "testconfig.json")
 default_config_path = os.path.join(current_dir, "..", "cookiecutter.json")
 
 test_cases_conf = [

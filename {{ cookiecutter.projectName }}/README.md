@@ -17,9 +17,9 @@ This repository contains the following files:
 This repository contains the following folders:
 * ```src```: contains source files and resources used by the project.
     * ```main/java```: contains application's source code
-    * ```main/resources```: contains application's resources
+    > You might want to create in the future a ```main/resources``` folder which contains application's resources
     * ```test/java```: contains tests' source code
-    * ```test/resources```: contains tests' resources
+    > You might want to create in the future a ```test/resources``` folder which contains tests resources
 
 ## How to run the application
 
